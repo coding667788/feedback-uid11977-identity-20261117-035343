@@ -1,0 +1,409 @@
+{
+  "env": {
+    "python": "3.12.8",
+    "executable": "D:\\CC_Codex_FeedBack\\runtimes\\cc005-csv-python312\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "sqlite": "3.45.3",
+    "elapsed_seconds": 56.41,
+    "total": 49,
+    "passed": 49,
+    "failed": 0,
+    "skipped": 0,
+    "started_at": "2026-11-17 05:05:08"
+  },
+  "records": [
+    {
+      "module": "tests.test_functional.TestBinding",
+      "name": "test_cannot_swap_expected_version",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.91,
+      "covers": "换预期版本仍按原版本 CAS，冲突 409"
+    },
+    {
+      "module": "tests.test_functional.TestBinding",
+      "name": "test_cannot_swap_resource",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.73,
+      "covers": "换资源被拒绝，另一资源行不变"
+    },
+    {
+      "module": "tests.test_functional.TestBinding",
+      "name": "test_cannot_swap_value",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.7,
+      "covers": "换 value 被拒绝，库内保持确认值"
+    },
+    {
+      "module": "tests.test_functional.TestBinding",
+      "name": "test_code_from_other_intent_rejected",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.7,
+      "covers": "他意图的确认码不能批准本意图"
+    },
+    {
+      "module": "tests.test_functional.TestBinding",
+      "name": "test_cross_session_ticket_move",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.77,
+      "covers": "跨浏览器会话搬票据被拒绝"
+    },
+    {
+      "module": "tests.test_functional.TestBinding",
+      "name": "test_cross_tenant_ticket_move",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.75,
+      "covers": "跨租户搬票据被拒绝"
+    },
+    {
+      "module": "tests.test_functional.TestBinding",
+      "name": "test_one_approval_per_challenge",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.64,
+      "covers": "同一 challenge 只产生一份批准/一张票据"
+    },
+    {
+      "module": "tests.test_functional.TestBinding",
+      "name": "test_prepare_cannot_choose_identity",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.57,
+      "covers": "请求不能自选租户/用户/会话"
+    },
+    {
+      "module": "tests.test_functional.TestBinding",
+      "name": "test_prepare_rejects_stale_expected_version",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.6,
+      "covers": "prepare 拒绝已过期的预期版本（不生成让人误确认的 challenge）"
+    },
+    {
+      "module": "tests.test_functional.TestBinding",
+      "name": "test_request_cannot_supply_confirm_key",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.64,
+      "covers": "请求不能自带确认密钥作为服务端真值"
+    },
+    {
+      "module": "tests.test_functional.TestExpiryAndConflicts",
+      "name": "test_conflict_not_silently_rebased",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.85,
+      "covers": "冲突不会被偷偷改成基于新版本执行"
+    },
+    {
+      "module": "tests.test_functional.TestExpiryAndConflicts",
+      "name": "test_ticket_expired_at_boundary",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.64,
+      "covers": "票据有效期为 30s（库内 issued/expires 差）"
+    },
+    {
+      "module": "tests.test_functional.TestExpiryAndConflicts",
+      "name": "test_version_conflict_between_two_intents",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.79,
+      "covers": "两个意图争用同一版本：一个成功，另一个 409 且不写库"
+    },
+    {
+      "module": "tests.test_functional.TestHappyPathAndReplay",
+      "name": "test_execute_rejects_request_supplied_values",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.77,
+      "covers": "execute 拒绝请求里后补的 config_id/version/value/tenant"
+    },
+    {
+      "module": "tests.test_functional.TestHappyPathAndReplay",
+      "name": "test_normal_session_cannot_write_config",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.57,
+      "covers": "普通登录会话无写入口；只有 tickets 能触发写入"
+    },
+    {
+      "module": "tests.test_functional.TestHappyPathAndReplay",
+      "name": "test_prepare_does_not_change_config",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.62,
+      "covers": "prepare 只落不可变意图，不改配置"
+    },
+    {
+      "module": "tests.test_functional.TestHappyPathAndReplay",
+      "name": "test_replay_same_ticket_returns_result_without_second_write",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.77,
+      "covers": "同票据重试返回原结果、executions 仍为 1、配置未二次变更"
+    },
+    {
+      "module": "tests.test_functional.TestHappyPathAndReplay",
+      "name": "test_verify_then_execute_applies_exact_intent",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.67,
+      "covers": "只执行被确认的 version/value（接口结果 + 数据库行同时校验）"
+    },
+    {
+      "module": "tests.test_expiry.TestTicketExpiry",
+      "name": "test_challenge_expiry_blocks_verify",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 5.17,
+      "covers": "challenge 过期后不能确认"
+    },
+    {
+      "module": "tests.test_expiry.TestTicketExpiry",
+      "name": "test_default_ttl_is_30_seconds",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.12,
+      "covers": "默认票据 TTL 恰为 30000ms"
+    },
+    {
+      "module": "tests.test_expiry.TestTicketExpiry",
+      "name": "test_execute_after_expiry_rejected_and_no_write",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 2.53,
+      "covers": "过期后 410 且零写入"
+    },
+    {
+      "module": "tests.test_expiry.TestTicketExpiry",
+      "name": "test_execute_just_before_expiry_succeeds",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.34,
+      "covers": "过期前执行成功"
+    },
+    {
+      "module": "tests.test_expiry.TestTicketExpiry",
+      "name": "test_replay_after_ticket_expiry_still_returns_original_result",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 2.58,
+      "covers": "票据过期后重试仍返回原结果（不再写）；退出后同样重试被拒"
+    },
+    {
+      "module": "tests.test_concurrency.TestConcurrency",
+      "name": "test_concurrent_verify_same_challenge_single_approval",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.43,
+      "covers": "8 进程并发 verify：1 份批准、1 张票据"
+    },
+    {
+      "module": "tests.test_concurrency.TestConcurrency",
+      "name": "test_four_processes_same_ticket_only_one_update",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.48,
+      "covers": "4 进程并发同一票据：恰好 1 次配置变更"
+    },
+    {
+      "module": "tests.test_concurrency.TestConcurrency",
+      "name": "test_parallel_independent_intents_serialise_versions",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.56,
+      "covers": "6 个同版本意图并发：1 成功 5 冲突"
+    },
+    {
+      "module": "tests.test_concurrency.TestConcurrency",
+      "name": "test_two_intents_same_expected_version_only_one_wins",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.41,
+      "covers": "两个意图并发争用同一版本：恰好一个赢"
+    },
+    {
+      "module": "tests.test_concurrency.TestConcurrency",
+      "name": "test_verify_and_execute_race_on_different_processes",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 2.23,
+      "covers": "多进程 verify+execute 竞争：每配置各写一次"
+    },
+    {
+      "module": "tests.test_concurrency.TestExecutionHoldsLock",
+      "name": "test_disable_after_verify_blocks_execute",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.72,
+      "covers": "确认后禁用，执行被拒绝"
+    },
+    {
+      "module": "tests.test_concurrency.TestExecutionHoldsLock",
+      "name": "test_logout_waits_for_inflight_execution",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.99,
+      "covers": "执行已持写锁时 logout 必须等待，不会插进票据已用/配置未提交之间"
+    },
+    {
+      "module": "tests.test_concurrency.TestLogoutDisableRace",
+      "name": "test_disable_commits_before_execution_writes",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.18,
+      "covers": "禁用先提交：已验证未提交的执行不落库"
+    },
+    {
+      "module": "tests.test_concurrency.TestLogoutDisableRace",
+      "name": "test_execution_commits_before_logout_then_logout_wins_retry",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.97,
+      "covers": "执行先提交：重试被会话状态拦下，配置不再变"
+    },
+    {
+      "module": "tests.test_concurrency.TestLogoutDisableRace",
+      "name": "test_logout_alone_invalidates_pending_ticket",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.02,
+      "covers": "退出后未执行票据作废（重新登录也不行）"
+    },
+    {
+      "module": "tests.test_concurrency.TestLogoutDisableRace",
+      "name": "test_logout_commits_before_execution_writes",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.18,
+      "covers": "退出先提交：已验证未提交的执行不落库"
+    },
+    {
+      "module": "tests.test_concurrency.TestLogoutDisableRace",
+      "name": "test_session_rotation_invalidates_ticket",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.91,
+      "covers": "会话轮换后旧票据不可用、新会话也不能接管"
+    },
+    {
+      "module": "tests.test_crash.TestCrashIntegrity",
+      "name": "test_check_command_after_all_crashes",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 2.77,
+      "covers": "多次崩溃后 check 命令全绿（完整性/唯一性）"
+    },
+    {
+      "module": "tests.test_crash.TestCrashPoints",
+      "name": "test_crash_after_commit_before_response",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.16,
+      "covers": "故障点③提交后响应未发出：重试返回原结果且不重复写"
+    },
+    {
+      "module": "tests.test_crash.TestCrashPoints",
+      "name": "test_crash_after_config_updated_before_commit",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.16,
+      "covers": "故障点②配置已更新但未提交：回滚，重启重试恰好一次"
+    },
+    {
+      "module": "tests.test_crash.TestCrashPoints",
+      "name": "test_crash_after_logout_commit_before_response",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.12,
+      "covers": "logout 提交后崩溃：票据作废、重试 401"
+    },
+    {
+      "module": "tests.test_crash.TestCrashPoints",
+      "name": "test_crash_after_ticket_marked_used_before_config_update",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.08,
+      "covers": "故障点①票据已标记用但配置未更新：事务回滚，重启重试恰好一次"
+    },
+    {
+      "module": "tests.test_crash.TestCrashPoints",
+      "name": "test_crash_before_ticket_claim_writes_nothing",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.09,
+      "covers": "断点在取锁前：无任何写入"
+    },
+    {
+      "module": "tests.test_crash.TestCrashPoints",
+      "name": "test_crash_twice_same_ticket_committed_then_retried",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.36,
+      "covers": "提交后崩 + 重试再崩：仍只有一次更新"
+    },
+    {
+      "module": "tests.test_crash.TestCrashWithFourProcesses",
+      "name": "test_hard_kill_after_config_update_then_fleet_retries",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.47,
+      "covers": "外部强杀（配置已改未提交）后 4 进程并发重试：仍只写一次"
+    },
+    {
+      "module": "tests.test_crash.TestCrashWithFourProcesses",
+      "name": "test_hard_kill_while_ticket_used_then_fleet_retries",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 1.42,
+      "covers": "外部强杀持锁进程（票据已用未提交）后 4 进程并发重试：仍只写一次"
+    },
+    {
+      "module": "tests.test_commands.TestCommands",
+      "name": "test_brute_force_is_rate_limited",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.86,
+      "covers": "确认码暴力尝试被限速，且未产生批准"
+    },
+    {
+      "module": "tests.test_commands.TestCommands",
+      "name": "test_init_check_code_and_out_of_band_verify",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.95,
+      "covers": "无回显部署：确认码只能由本地密钥离线推导"
+    },
+    {
+      "module": "tests.test_commands.TestCommands",
+      "name": "test_init_refuses_to_clobber_without_force",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.12,
+      "covers": "init 不会默认覆盖既有库"
+    },
+    {
+      "module": "tests.test_commands.TestDatabaseGuards",
+      "name": "test_intent_and_approval_are_immutable",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.01,
+      "covers": "触发器保证意图/批准不可改、审计不可删"
+    },
+    {
+      "module": "tests.test_commands.TestDatabaseGuards",
+      "name": "test_used_ticket_cannot_be_reissued",
+      "status": "PASS",
+      "detail": "",
+      "seconds": 0.01,
+      "covers": "已用票据不可回退为 issued、不可删除"
+    }
+  ]
+}
